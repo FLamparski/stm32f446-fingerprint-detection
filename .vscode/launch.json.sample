@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "launch",
+            "name": "Debug Microcontroller",
+            "preLaunchTask": "",
+            "target": "${workspaceFolder}/target/thumbv7em-none-eabi/debug/${workspaceFolderBasename}",
+            "cwd": "${workspaceRoot}",
+            "gdbpath": "<path to arm-eabi-none-gdb>",
+            "autorun": [
+                "target remote :3333",
+                "monitor arm semihosting enable",
+                "load",
+                "step"
+            ]
+        }
+    ]
+}
